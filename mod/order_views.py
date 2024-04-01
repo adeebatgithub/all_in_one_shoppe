@@ -32,7 +32,7 @@ class OrderDetailView(LoginRequiredMixin, StaffuserRequiredMixin, View):
         queryset = self.get_queryset()
         total = 0
         for order in queryset:
-            total += order.quantity * order.product.price
+            total += order.quantity * order.product.discount_price
         return total
 
     def get_extra_context_object_data(self):
