@@ -95,7 +95,7 @@ class CartListView(LoginRequiredMixin, generic.ListView):
         queryset = self.get_queryset()
         total = 0
         for query in queryset:
-            total += float(query.quantity) * float(query.product.price)
+            total += float(query.quantity) * float(query.product.discount_price)
         # total += (total * (5/100))
         return {"total": total}
 
